@@ -8,14 +8,22 @@
 
 import UIKit
 
-class AddController: UIViewController {
+var todoListArray = [String]()
 
+class AddController: UIViewController {
+    @IBOutlet weak var todoTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func addButtonClicked(_ sender: Any) {
+        todoListArray.append(todoTextField.text!)
+        todoTextField.text = ""
+        UserDefaults.standard.set(todoListArray, forKey: "TodoList")
+    }
     @IBAction func backButtonClicked(_ sender: Any) {
         // モーダルウインドウを閉じる
         dismiss(animated: true, completion: nil)
