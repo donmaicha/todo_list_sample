@@ -27,6 +27,7 @@ class AddController: UIViewController {
     @IBAction func backButtonClicked(_ sender: Any) {
         // モーダルウインドウを閉じる
         dismiss(animated: true, completion: nil)
+        
     }
     
     /*
